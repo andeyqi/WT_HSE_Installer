@@ -34,7 +34,6 @@ MEMORY
 
 TARGET(binary) /* specify the file format of binary file */
 INPUT (..\HSE_FW_S32K344_0_2_55_0\hse_ab_swap\s32k3x4_hse_fw_1.5.0_2.55.0_pb250130.bin.pink)
-INPUT (.\..\HSE_FW_S32K344_0_2_55_0\hse_ab_swap\s32k3x4_hse_fw_1.5.0_2.55.0_pb250130.bin.pink)
 OUTPUT_FORMAT(default) /* restore the out file format */
 
 /* Linker script to place sections and symbol values. Should be used together
@@ -77,12 +76,6 @@ SECTIONS
 
   	__HSE_BIN_START = ORIGIN(HSE_BINARY);
 
-  .hse_binb :
-  	{
-  		. = ALIGN (0x4);
-  		.\..\HSE_FW_S32K344_0_2_55_0\hse_ab_swap\s32k3x4_hse_fw_1.5.0_2.55.0_pb250130.bin.pink (.data)
-  		. = ALIGN (0x4);
-  	} > HSE_BINARYB
 
   .boot_header :
   {
